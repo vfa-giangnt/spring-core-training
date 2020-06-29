@@ -5,14 +5,16 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class MainApp {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-        HelloWorld objA = (HelloWorld) context.getBean("helloWorld");
-//        objA.getMessage();
 
-        objA.setMessage("I'm object A");
-        objA.getMessage();
+        // Example of inject by constructor
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        HelloWorld objA = (HelloWorld) context.getBean("helloWorldConstructor");
+        objA.print();
 
-        HelloWorld objB = (HelloWorld) context.getBean("helloWorld");
-        objB.getMessage();
+        // Example of inject by setter
+        HelloWorld objB = (HelloWorld) context.getBean("helloWorldSetter");
+        objB.print();
+
     }
+
 }

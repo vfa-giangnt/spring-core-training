@@ -4,8 +4,12 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans
    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="helloWorld" class="gau.nau.HelloWorld" scope="prototype">
-        <property name="message" value="Hello World!" />
+    <bean id="helloWorldSetter" class="gau.nau.HelloWorld">
+        <property name="message" value="Inject by Setter" />
+    </bean>
+
+    <bean id="helloWorldConstructor" class="gau.nau.HelloWorld">
+        <constructor-arg value="Inject by Contructor" type="String" />
     </bean>
 
 </beans>
